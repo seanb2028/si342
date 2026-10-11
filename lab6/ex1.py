@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+#######################################################################
+# PROGRAM: This program reads input and prints "MATCH!" for each line #
+# containing "b0b" or "b1b", "NO MATCH!" for each line that doesn't.  #
+#######################################################################
+
+import sys             # "sys" module means "system"
+import re
+
+# Loop over each line of input
+for line in sys.stdin: # loops over each line of input
+    mres = re.search(r'b(0|1)b',line) # use r'...' strings for regexs
+
+    if mres:
+        print("MATCH!")
+    else:
+        print("NO MATCH!")
